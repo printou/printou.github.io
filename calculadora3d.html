@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora 3D | Printou</title>
+  <meta name="description" content="Calcule com precisão o custo do seu projeto de Impressão 3D com a calculadora Printou. Visual moderno, responsivo e alinhado à identidade da marca.">
+  <meta name="keywords" content="Calculadora 3D, custos impressão 3D, orçamento 3D, Printou, Barra Mansa, filamento, energia elétrica, margem de lucro, marketplace, 3D print, prototipagem">
+  <link rel="canonical" href="https://printou.com.br/calculadora3d">
+  <!-- Montserrat Rounded Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Rounded:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #232728;
+      --accent: #FF7403;
+      --light-bg: #FFFDF8;
+      --card: #fff;
+    }
+    body {
+      background: var(--light-bg);
+      color: var(--primary);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: var(--light-bg);
+      color: var(--primary);
+      padding: 0;
+      margin: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    #logo {
+      display: flex;
+      align-items: center;
+      padding: 26px 0 18px 0;
+    }
+    #logo img {
+      height: 90px;
+      margin-right: 22px;
+    }
+    #logo span {
+      font-size: 2.15em;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--primary);
+      font-family: 'Montserrat Rounded', Arial, sans-serif;
+    }
+    nav {
+      display: flex;
+      gap: 32px;
+      background: var(--accent);
+      padding: 10px 0 10px 0;
+      border-radius: 8px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+    nav a {
+      color: var(--light-bg);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.06em;
+      transition: background 0.19s, color 0.19s;
+      padding: 8px 14px;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      background: var(--primary);
+      color: var(--accent);
+    }
+    main {
+      background: var(--card);
+      margin-top: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      padding: 42px 28px 28px 28px;
+      flex: 1;
+    }
+    h1 {
+      color: var(--accent);
+      font-size: 2.1em;
+      margin-bottom: 20px;
+      margin-top: 0;
+      letter-spacing: 1px;
+      font-family: 'Montserrat Rounded', Arial, sans-serif;
+      text-align: center;
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 1.23em;
+      margin: 28px 0 14px 0;
+      font-family: inherit;
+    }
+    label {
+      color: var(--primary);
+      font-size: 1.01em;
+      margin-top: 14px;
+    }
+    input[type="number"], input[type="text"] {
+      width: 100%;
+      max-width: 300px;
+      padding: 6px 10px;
+      border: 1.3px solid #e5e3df;
+      border-radius: 5px;
+      font-size: 1em;
+      background: #fffcf7;
+      color: var(--primary);
+      margin-bottom: 10px;
+      outline: none;
+      box-sizing: border-box;
+      margin-top: 4px;
+    }
+    input:focus {
+      border-color: var(--accent);
+      background: #fff;
+    }
+    .bloco-form {
+      background: #FFFAF3;
+      border-left: 6px solid var(--accent);
+      padding: 16px 20px 10px 20px;
+      border-radius: 7px;
+      margin-bottom: 30px;
+      margin-top: 12px;
+      box-shadow: 0 2px 8px rgba(255,116,3,0.06);
+      max-width: 560px;
+    }
+    .form-field {
+      margin-bottom: 14px;
+    }
+    .form-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .result-box {
+      background: #fff4e8;
+      border-left: 5px solid var(--primary);
+      border-radius: 6px;
+      padding: 16px 14px 8px 18px;
+      margin: 20px 0 10px 0;
+      color: var(--primary);
+      font-size: 1.07em;
+      max-width: 440px;
+    }
+    .calc-btns {
+      display: flex;
+      gap: 12px;
+      margin: 18px 0 2px 0;
+    }
+    button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 9px 18px;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 1px 2px 0 rgba(255,116,3,0.11);
+      transition: background 0.17s;
+    }
+    button:hover {
+      background: var(--primary);
+      color: var(--accent);
+    }
+    .note {
+      font-size: 0.99em;
+      color: #827066;
+      margin-top: 14px;
+      font-style: italic;
+    }
+    footer {
+      background: var(--primary);
+      color: var(--light-bg);
+      text-align: center;
+      padding: 24px 10px 20px 10px;
+      font-size: 1em;
+      font-weight: 400;
+      margin-top: 40px;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: underline;
+      margin: 0 6px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: var(--light-bg);
+      background: var(--accent);
+      border-radius: 3px;
+      padding: 0 4px;
+    }
+    @media (max-width: 660px) {
+      .container, main { padding-left: 5px; padding-right: 5px; }
+      #logo img { height: 60px; }
+      nav { gap: 11px; }
+      main { padding: 18px 4px 12px 4px; }
+      .bloco-form, .result-box { max-width: 99%; }
+    }
+  </style>
+  <script>
+    function calcular() {
+      let filamento = parseFloat(document.getElementById('filamento').value) || 0;
+      let consumo = parseFloat(document.getElementById('consumo').value) || 0;
+      let tempo_horas = parseFloat(document.getElementById('horas').value) || 0;
+      let tempo_min = parseFloat(document.getElementById('minutos').value) || 0;
+      let watts = parseFloat(document.getElementById('watts').value) || 0;
+      let kwh = parseFloat(document.getElementById('kwh').value) || 0;
+      let insumos = parseFloat(document.getElementById('insumos').value) || 0;
+      let margem = parseFloat(document.getElementById('margem').value) || 0;
+      let taxaFixa = parseFloat(document.getElementById('taxa_fixa').value) || 0;
+      let comissao = parseFloat(document.getElementById('comissao').value) || 0;
+      
+      // Custo de filamento
+      let custoFilamento = filamento * (consumo/1000); // gramas para kg
+      // Energia (horas + minutos)
+      let tempoTotalHoras = tempo_horas + (tempo_min/60);
+      let kwhGasto = (watts/1000) * tempoTotalHoras;
+      let custoEnergia = kwhGasto * kwh;
+      // Soma custos
+      let custoTotal = custoFilamento + custoEnergia + insumos;
+      // Aplica margem
+      let precoComMargem = custoTotal * (1 + (margem/100));
+      // Marketplace (por dentro)
+      let precoVenda = (precoComMargem + taxaFixa) / (1 - (comissao/100));
+      // Lucro líquido pós taxas
+      let lucroLiquido = precoVenda - custoTotal - (precoVenda * (comissao/100)) - taxaFixa;
+      
+      // Exibir resultado
+      document.getElementById('res-filamento').innerText = "R$ " + custoFilamento.toFixed(2);
+      document.getElementById('res-energia').innerText = "R$ " + custoEnergia.toFixed(2);
+      document.getElementById('res-total').innerText = "R$ " + precoVenda.toFixed(2);
+      document.getElementById('res-lucro').innerText = "R$ " + lucroLiquido.toFixed(2);
+    }
+    function limpar() {
+      document.querySelectorAll('input[type="number"]').forEach(el => el.value = '');
+      document.getElementById('res-filamento').innerText = "R$ 0,00";
+      document.getElementById('res-energia').innerText = "R$ 0,00";
+      document.getElementById('res-total').innerText = "R$ 0,00";
+      document.getElementById('res-lucro').innerText = "R$ 0,00";
+    }
+    function imprimir() {
+      window.print();
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container" id="logo">
+      <img src="1000628033.png" alt="Logo Printou">
+      <span>Printou</span>
+    </div>
+    <nav class="container">
+      <a href="/">Home</a>
+      <a href="https://shopee.com.br/printou" target="_blank" rel="noopener">Marketplace Shopee</a>
+      <a href="https://printou.com.br" target="_blank" rel="noopener">Loja Própria</a>
+      <a href="https://printou.com.br/calculadora3d" target="_blank" rel="noopener">Calculadora 3D</a>
+    </nav>
+  </header>
+  <main class="container" id="calculadora">
+    <h1>Calculadora de Custos de Impressão 3D</h1>
+    <form class="bloco-form" onsubmit="event.preventDefault();calcular();">
+      <div class="form-field">
+        <label for="filamento"><b>Custo do Quilo do Filamento (R$) *</b></label>
+        <input type="number" min="0" step="0.01" id="filamento" required>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="consumo"><b>Consumo de Filamento (gramas) *</b></label>
+          <input type="number" min="0" step="0.01" id="consumo" required>
+        </div>
+        <div class="form-field">
+          <label for="horas"><b>Tempo Impressão (horas)</b></label>
+          <input type="number" min="0" id="horas">
+        </div>
+        <div class="form-field">
+          <label for="minutos"><b>Tempo Impressão (minutos)</b></label>
+          <input type="number" min="0" max="59" id="minutos">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="watts"><b>Consumo da Impressora (Watts) *</b></label>
+          <input type="number" min="0" id="watts" required>
+        </div>
+        <div class="form-field">
+          <label for="kwh"><b>Custo do kWh (R$) *</b></label>
+          <input type="number" min="0" step="0.001" id="kwh" required>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="insumos"><b>Custo da Embalagem / Insumos adicionais (R$)</b></label>
+        <input type="number" min="0" step="0.01" id="insumos">
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="margem"><b>Margem de Lucro (%)</b></label>
+          <input type="number" min="0" max="100" id="margem">
+        </div>
+        <div class="form-field">
+          <label for="taxa_fixa"><b>Taxa Fixa do Marketplace (R$)</b></label>
+          <input type="number" min="0" step="0.01" id="taxa_fixa">
+        </div>
+        <div class="form-field">
+          <label for="comissao"><b>Comissão do Marketplace (%)</b></label>
+          <input type="number" min="0" max="100" id="comissao">
+        </div>
+      </div>
+      <div class="calc-btns">
+        <button type="submit">Calcular</button>
+        <button type="button" onclick="limpar()">Limpar</button>
+        <button type="button" onclick="imprimir()">Imprimir</button>
+      </div>
+    </form>
+    <div class="result-box">
+      <div><b>Custo do Filamento:</b> <span id="res-filamento">R$ 0,00</span></div>
+      <div><b>Custo de Energia:</b> <span id="res-energia">R$ 0,00</span></div>
+      <div><b>Total para venda:</b> <span id="res-total">R$ 0,00</span></div>
+      <div><b>Lucro Líquido (após taxas e comissão):</b> <span id="res-lucro">R$ 0,00</span></div>
+    </div>
+    <div class="note">
+      Observação: Todos os dados informados são de responsabilidade do usuário. A calculadora é isenta de qualquer problema decorrente do uso das informações aqui apresentadas.
+    </div>
+  </main>
+  <footer>
+    © 2025 Printou - Todos os direitos reservados<br>
+    <span>
+      <a href="http://printou.space" target="_blank" rel="noopener">printou.space</a> -
+      <a href="https://instagram.com/printou.store" target="_blank" rel="noopener">Instagram</a> -
+      <a href="https://3dprintou.lojaintegrada.com.br/pagina/politica-de-privacidade.html" target="_blank">Política de Privacidade</a>
+    </span>
+  </footer>
+</body>
+</html>
