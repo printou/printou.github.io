@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Printou - Impressão 3D, Peças de Reparo e Prototipagem em Barra Mansa RJ</title>
-  <meta name="description" content="Printou: Impressão 3D em Barra Mansa RJ. Fabricamos peças fora de linha, protótipos, decoração, presentes personalizados e peças de reparo para eletrodomésticos, brinquedos e construção. Atendemos todo o Brasil.">
-  <meta name="keywords" content="Impressão 3D, peças de reposição, protótipos, decoração 3D, presentes personalizados, peças de reparo, eletrodomésticos, brinquedos, construção civil, Printou, Barra Mansa, Shopee, loja integrada">
-  <link rel="canonical" href="https://printou.space/">
+  <meta name="description" content="Printou: Impressão 3D em Barra Mansa RJ. Peças fora de linha, protótipos, decoração, presentes personalizados e peças de reparo para eletrodomésticos, brinquedos e construção. Atendemos todo o Brasil.">
+  <meta name="keywords" content="Impressão 3D, peças de reposição, protótipos, decoração 3D, presentes personalizados, peças de reparo, eletrodomésticos, brinquedos, construção civil, Printou, Barra Mansa, Shopee, loja própria">
+  <link rel="canonical" href="https://printou.com.br/">
   <!-- Montserrat Rounded Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Rounded:wght@700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #333333;
-      --accent: #FF6F3C;
+      --primary: #232728;
+      --accent: #FF7403;
       --light-bg: #FFFDF8;
       --card: #fff;
     }
@@ -45,7 +45,6 @@
     }
     #logo img {
       height: 90px;
-      width: auto;
       margin-right: 22px;
     }
     #logo span {
@@ -92,6 +91,8 @@
       margin-bottom: 12px;
       margin-top: 0;
       letter-spacing: 1px;
+      font-family: 'Montserrat Rounded', Arial, sans-serif;
+      text-align: center;
     }
     h2 {
       color: var(--primary);
@@ -117,12 +118,9 @@
       margin-top: 15px;
       box-shadow: 0 2px 8px rgba(255,116,3,0.06);
     }
-    a {
-      word-break: break-word;
-    }
     .contato-bloco {
       background: #FFF4E8;
-      border-left: 6px solid var(--accent);
+      border-left: 4px solid var(--primary);
       padding: 8px 14px;
       border-radius: 6px;
       margin-top: 16px;
@@ -130,6 +128,9 @@
       margin-bottom: 0;
       color: var(--primary);
       max-width: 440px;
+    }
+    a {
+      word-break: break-word;
     }
     footer {
       background: var(--primary);
@@ -155,10 +156,26 @@
     }
     @media (max-width: 660px) {
       .container, main { padding-left: 5px; padding-right: 5px; }
-      #logo img { height: 38px; }
-      nav { gap: 14px; }
-      main { padding: 18px 6px 15px 6px; }
-      footer { font-size: 0.98em; padding: 16px 2px 12px 2px; }
+      #logo img { height: 60px; }
+      nav {
+        gap: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 2px 0 2px 0;
+        margin-bottom: 14px;
+      }
+      nav a {
+        display: block;
+        padding: 11px 0;
+        margin: 0;
+        font-size: 1.09em;
+        border-radius: 0;
+        border-bottom: 1px solid #ffd9b6;
+      }
+      nav a:last-child {
+        border-bottom: none;
+      }
+      main { padding: 18px 4px 12px 4px; }
       .contato-bloco { font-size: 0.98em; }
     }
   </style>
@@ -166,8 +183,8 @@
 <body>
   <header>
     <div class="container" id="logo">
-      <img src="1000628033.png" alt="Logo PRINTOU">
-      <span>PRINTOU</span>
+      <img src="1000628033.png" alt="Logo Printou">
+      <span>Printou</span>
     </div>
     <nav class="container">
       <a href="#home">Home</a>
@@ -185,10 +202,10 @@
     <h2>Nossos Serviços</h2>
     <ul>
       <li><b>Peças fora de linha</b> — fabricamos reposições de alta qualidade para produtos indisponíveis no mercado</li>
-      <li><b>Protótipos</b> — desenvolvimento rápido de ideias para engenheiros, inventores e design</li>
+      <li><b>Protótipos</b> — desenvolvimento rápido de ideias para engenheiros, inventores e designers</li>
       <li><b>Decoração</b> — peças exclusivas para ambientes residenciais e comerciais</li>
       <li><b>Presentes personalizados</b> — criatividade para datas especiais, brindes e lembranças únicas</li>
-      <li><b>Peças de reparo para casa</b> — fabricação de peças sob medida para eletrodomésticos, brinquedos e itens para construção</li>
+      <li><b>Peças de reparo para casa</b> — fabricação de peças sob medida para <u>eletrodomésticos</u>, <u>brinquedos</u> e <u>itens para construção</u></li>
     </ul>
     <h2>Por que escolher a Printou?</h2>
     <ul>
@@ -203,7 +220,7 @@
       <div><b>Whatsapp:</b> (24) 99999-9999</div>
     </div>
   </main>
-  <footer>
+ <footer>
     © 2025 Printou - Todos os direitos reservados<br>
     <span>
       <a href="http://printou.space" target="_blank" rel="noopener">printou.space</a> -
