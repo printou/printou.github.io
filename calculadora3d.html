@@ -6,10 +6,14 @@
   <title>Calculadora 3D | Printou</title>
   <meta name="description" content="Calcule com precisão o custo do seu projeto de Impressão 3D com a calculadora Printou. Visual moderno, responsivo e alinhado à identidade da marca.">
   <meta name="keywords" content="Calculadora 3D, custos impressão 3D, orçamento 3D, Printou, Barra Mansa, filamento, energia elétrica, margem de lucro, marketplace, 3D print, prototipagem">
-  <link rel="canonical" href="https://printou.com.br/calculadora3d">
-  <!-- Montserrat Rounded Google Fonts -->
+  <link rel="canonical" href="https://printou.space/calculadora3d">
+  
+  <!-- Fonte Montserrat Rounded -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Rounded:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3004280678727493" crossorigin="anonymous"></script>
+
   <style>
     :root {
       --primary: #232728;
@@ -30,8 +34,6 @@
     header {
       background: var(--light-bg);
       color: var(--primary);
-      padding: 0;
-      margin: 0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.04);
     }
     .container {
@@ -52,14 +54,14 @@
       font-size: 2.15em;
       font-weight: 800;
       letter-spacing: 2px;
-      color: var(--primary);
       font-family: 'Montserrat Rounded', Arial, sans-serif;
+      color: var(--primary);
     }
     nav {
       display: flex;
       gap: 32px;
       background: var(--accent);
-      padding: 10px 0 10px 0;
+      padding: 10px 0;
       border-radius: 8px;
       justify-content: center;
       align-items: center;
@@ -90,23 +92,10 @@
       color: var(--accent);
       font-size: 2.1em;
       margin-bottom: 20px;
-      margin-top: 0;
-      letter-spacing: 1px;
-      font-family: 'Montserrat Rounded', Arial, sans-serif;
       text-align: center;
+      font-family: 'Montserrat Rounded', Arial, sans-serif;
     }
-    h2 {
-      color: var(--primary);
-      font-size: 1.23em;
-      margin: 28px 0 14px 0;
-      font-family: inherit;
-    }
-    label {
-      color: var(--primary);
-      font-size: 1.01em;
-      margin-top: 14px;
-    }
-    input[type="number"], input[type="text"] {
+    input[type="number"] {
       width: 100%;
       max-width: 300px;
       padding: 6px 10px;
@@ -114,11 +103,8 @@
       border-radius: 5px;
       font-size: 1em;
       background: #fffcf7;
-      color: var(--primary);
       margin-bottom: 10px;
       outline: none;
-      box-sizing: border-box;
-      margin-top: 4px;
     }
     input:focus {
       border-color: var(--accent);
@@ -130,7 +116,6 @@
       padding: 16px 20px 10px 20px;
       border-radius: 7px;
       margin-bottom: 30px;
-      margin-top: 12px;
       box-shadow: 0 2px 8px rgba(255,116,3,0.06);
       max-width: 560px;
     }
@@ -146,9 +131,8 @@
       background: #fff4e8;
       border-left: 5px solid var(--primary);
       border-radius: 6px;
-      padding: 16px 14px 8px 18px;
+      padding: 16px 18px;
       margin: 20px 0 10px 0;
-      color: var(--primary);
       font-size: 1.07em;
       max-width: 440px;
     }
@@ -166,18 +150,22 @@
       font-weight: 600;
       font-size: 1em;
       cursor: pointer;
-      box-shadow: 0 1px 2px 0 rgba(255,116,3,0.11);
-      transition: background 0.17s;
     }
     button:hover {
       background: var(--primary);
       color: var(--accent);
     }
     .note {
-      font-size: 0.99em;
+      font-size: 0.9em;
       color: #827066;
       margin-top: 14px;
       font-style: italic;
+    }
+    .adsense-bloco {
+      margin: 32px auto 0 auto;
+      text-align: center;
+      min-height: 120px;
+      max-width: 100%;
     }
     footer {
       background: var(--primary);
@@ -185,7 +173,6 @@
       text-align: center;
       padding: 24px 10px 20px 10px;
       font-size: 1em;
-      font-weight: 400;
       margin-top: 40px;
     }
     footer a {
@@ -193,68 +180,46 @@
       text-decoration: underline;
       margin: 0 6px;
       font-weight: 500;
-      transition: color 0.2s;
-    }
-    footer a:hover {
-      color: var(--light-bg);
-      background: var(--accent);
-      border-radius: 3px;
-      padding: 0 4px;
     }
     @media (max-width: 660px) {
-      .container, main { padding-left: 5px; padding-right: 5px; }
-      #logo img { height: 60px; }
       nav {
         gap: 0;
         flex-direction: column;
         align-items: stretch;
-        padding: 2px 0 2px 0;
-        margin-bottom: 14px;
       }
       nav a {
         display: block;
         padding: 11px 0;
-        margin: 0;
-        font-size: 1.09em;
-        border-radius: 0;
         border-bottom: 1px solid #ffd9b6;
       }
       nav a:last-child {
         border-bottom: none;
       }
-      main { padding: 18px 4px 12px 4px; }
-      .bloco-form, .result-box { max-width: 99%; }
     }
   </style>
+
   <script>
     function calcular() {
-      let filamento = parseFloat(document.getElementById('filamento').value) || 0;
-      let consumo = parseFloat(document.getElementById('consumo').value) || 0;
-      let tempo_horas = parseFloat(document.getElementById('horas').value) || 0;
-      let tempo_min = parseFloat(document.getElementById('minutos').value) || 0;
-      let watts = parseFloat(document.getElementById('watts').value) || 0;
-      let kwh = parseFloat(document.getElementById('kwh').value) || 0;
-      let insumos = parseFloat(document.getElementById('insumos').value) || 0;
-      let margem = parseFloat(document.getElementById('margem').value) || 0;
-      let taxaFixa = parseFloat(document.getElementById('taxa_fixa').value) || 0;
-      let comissao = parseFloat(document.getElementById('comissao').value) || 0;
+      const filamento = parseFloat(document.getElementById('filamento').value) || 0;
+      const consumo = parseFloat(document.getElementById('consumo').value) || 0;
+      const tempo_horas = parseFloat(document.getElementById('horas').value) || 0;
+      const tempo_min = parseFloat(document.getElementById('minutos').value) || 0;
+      const watts = parseFloat(document.getElementById('watts').value) || 0;
+      const kwh = parseFloat(document.getElementById('kwh').value) || 0;
+      const insumos = parseFloat(document.getElementById('insumos').value) || 0;
+      const margem = parseFloat(document.getElementById('margem').value) || 0;
+      const taxaFixa = parseFloat(document.getElementById('taxa_fixa').value) || 0;
+      const comissao = parseFloat(document.getElementById('comissao').value) || 0;
       
-      // Custo de filamento
-      let custoFilamento = filamento * (consumo/1000); // gramas para kg
-      // Energia (horas + minutos)
-      let tempoTotalHoras = tempo_horas + (tempo_min/60);
-      let kwhGasto = (watts/1000) * tempoTotalHoras;
-      let custoEnergia = kwhGasto * kwh;
-      // Soma custos
-      let custoTotal = custoFilamento + custoEnergia + insumos;
-      // Aplica margem
-      let precoComMargem = custoTotal * (1 + (margem/100));
-      // Marketplace (por dentro)
-      let precoVenda = (precoComMargem + taxaFixa) / (1 - (comissao/100));
-      // Lucro líquido pós taxas
-      let lucroLiquido = precoVenda - custoTotal - (precoVenda * (comissao/100)) - taxaFixa;
+      const custoFilamento = filamento * (consumo / 1000);
+      const tempoTotalHoras = tempo_horas + (tempo_min / 60);
+      const kwhGasto = (watts / 1000) * tempoTotalHoras;
+      const custoEnergia = kwhGasto * kwh;
+      const custoTotal = custoFilamento + custoEnergia + insumos;
+      const precoComMargem = custoTotal * (1 + margem / 100);
+      const precoVenda = (precoComMargem + taxaFixa) / (1 - comissao / 100);
+      const lucroLiquido = precoVenda - custoTotal - (precoVenda * (comissao / 100)) - taxaFixa;
       
-      // Exibir resultado
       document.getElementById('res-filamento').innerText = "R$ " + custoFilamento.toFixed(2);
       document.getElementById('res-energia').innerText = "R$ " + custoEnergia.toFixed(2);
       document.getElementById('res-total').innerText = "R$ " + precoVenda.toFixed(2);
@@ -262,10 +227,9 @@
     }
     function limpar() {
       document.querySelectorAll('input[type="number"]').forEach(el => el.value = '');
-      document.getElementById('res-filamento').innerText = "R$ 0,00";
-      document.getElementById('res-energia').innerText = "R$ 0,00";
-      document.getElementById('res-total').innerText = "R$ 0,00";
-      document.getElementById('res-lucro').innerText = "R$ 0,00";
+      ['res-filamento', 'res-energia', 'res-total', 'res-lucro'].forEach(id => {
+        document.getElementById(id).innerText = "R$ 0,00";
+      });
     }
     function imprimir() {
       window.print();
@@ -275,7 +239,7 @@
 <body>
   <header>
     <div class="container" id="logo">
-      <img src="/imagens/1000628033.png" alt="Logo Printou">
+      <img src="https://printou.space/images/1000628033.png" alt="Logo Printou">
       <span>Printou</span>
     </div>
     <nav class="container">
@@ -285,7 +249,7 @@
       <a href="https://printou.space/calculadora3d" target="_blank" rel="noopener">Calculadora 3D</a>
     </nav>
   </header>
-  <main class="container" id="calculadora">
+  <main class="container">
     <h1>Calculadora de Custos de Impressão 3D</h1>
     <form class="bloco-form" onsubmit="event.preventDefault();calcular();">
       <div class="form-field">
@@ -298,11 +262,11 @@
           <input type="number" min="0" step="0.01" id="consumo" required>
         </div>
         <div class="form-field">
-          <label for="horas"><b>Tempo Impressão (horas)</b></label>
+          <label for="horas"><b>Tempo de Impressão (horas)</b></label>
           <input type="number" min="0" id="horas">
         </div>
         <div class="form-field">
-          <label for="minutos"><b>Tempo Impressão (minutos)</b></label>
+          <label for="minutos"><b>Tempo de Impressão (minutos)</b></label>
           <input type="number" min="0" max="59" id="minutos">
         </div>
       </div>
@@ -346,23 +310,20 @@
       <div><b>Total para venda:</b> <span id="res-total">R$ 0,00</span></div>
       <div><b>Lucro Líquido (após taxas e comissão):</b> <span id="res-lucro">R$ 0,00</span></div>
     </div>
-    <div class="note">
-      Observação: Todos os dados informados são de responsabilidade do usuário. A calculadora é isenta de qualquer problema decorrente do uso das informações aqui apresentadas.
-    </div>
+    <div class="note">Observação: Todos os dados são de responsabilidade do usuário.</div>
 
-    <!-- Google AdSense bloco responsivo (substitua slot conforme sua conta) -->
+    <!-- Google Adsense -->
     <div class="adsense-bloco">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-3004280678727493"
-           data-ad-slot="5127562303"
+           data-ad-slot="SEU_SLOT_AQUI"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
       <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
     </div>
-    <!-- Fim do bloco para AdSense -->
   </main>
   <footer>
     © 2025 Printou - Todos os direitos reservados<br>
@@ -374,12 +335,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
