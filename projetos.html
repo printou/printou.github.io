@@ -13,8 +13,9 @@ gtag('config', 'G-RZF5CTNRN4');
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projetos - Printou | Impressão 3D Personalizada</title>
-<meta name="description" content="Conheça os projetos desenvolvidos pela Printou em Impressão 3D, como peças automotivas, componentes de eletrodomésticos e soluções sob medida.">
+<meta name="description" content="Projetos desenvolvidos pela Printou em Impressão 3D: peças automotivas, componentes de eletrodomésticos e soluções personalizadas.">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Rounded:wght@700;800&display=swap" rel="stylesheet">
+
 <style>
 :root {
 --primary: #232728;
@@ -94,6 +95,8 @@ margin-top: 0;
 text-align: center;
 font-family: 'Montserrat Rounded', Arial, sans-serif;
 }
+
+/* Blocos de projeto */
 .projeto {
 display: flex;
 align-items: center;
@@ -125,6 +128,16 @@ font-size: 1.35em;
 margin: 0;
 font-size: 1.05em;
 }
+.info-bloco {
+background: #FFF4E8;
+border-left: 5px solid var(--accent);
+padding: 16px;
+border-radius: 6px;
+margin-top: 40px;
+font-size: 1.05em;
+}
+
+/* Rodapé */
 footer {
 background: var(--primary);
 color: var(--light-bg);
@@ -145,13 +158,26 @@ background: var(--accent);
 padding: 0 4px;
 border-radius: 3px;
 }
+
+/* Responsividade (corrigido igual à página inicial) */
 @media (max-width: 660px) {
+nav {
+flex-direction: column;
+align-items: stretch;
+gap: 0;
+}
+nav a {
+display: block;
+padding: 11px 0;
+border-bottom: 1px solid #ffd9b6;
+text-align: center;
+}
+nav a:last-child {
+border-bottom: none;
+}
 .projeto {
 flex-direction: column;
 text-align: center;
-}
-.projeto:nth-child(even) {
-flex-direction: column;
 }
 .projeto img {
 width: 100%;
@@ -225,12 +251,12 @@ height: auto;
 <img src="https://printou.space/imagens/protetor-alternador.png" alt="Protetor alternador agrícola">
 <div class="projeto-texto">
 <h2>Protetor para alternador de veículo com aplicação agrícola</h2>
-<p>Defletor criado sob medida para proteger o alternador contra sujeira e detritos, mantendo o desempenho ideal em condições severas de uso.</p>
+<p>Defletor criado sob medida para proteger o alternador contra sujeira e detritos, mantendo desempenho ideal em condições severas.</p>
 </div>
 </div>
 
-<div class="info-bloco" style="margin-top:40px;">
-<p>Além dessas soluções técnicas, também realizamos projetos personalizados para <b>brinquedos, brindes, lembrancinhas e itens de decoração</b>, trazendo criatividade e inovação para cada detalhe.</p>
+<div class="info-bloco">
+<p>Além dessas soluções técnicas, também realizamos projetos personalizados para <b>brinquedos, brindes, lembrancinhas e itens de decoração</b>, trazendo criatividade e inovação em cada detalhe.</p>
 </div>
 </main>
 
@@ -243,5 +269,4 @@ height: auto;
 </span>
 </footer>
 </body>
-
 </html>
